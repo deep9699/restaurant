@@ -12,6 +12,8 @@ export class CusinesService {
   private cusine_url="http://localhost:3000/cusine/";
   private bill_url="http://localhost:3000/bill/";
   private bill_details_url="http://localhost:3000/bill_details/";
+  private order_url="http://localhost:3000/order/";
+  private order_details_url="http://localhost:3000/order_details/";
   constructor(private _http:HttpClient) { }
   getCusine()
   {
@@ -38,5 +40,13 @@ export class CusinesService {
     let body=JSON.stringify(item);
     let head1=new HttpHeaders().set('Content-Type','application/json');
     return this._http.post(this.bill_details_url,body,{headers:head1});
+  }
+  getOrder(id)
+  {
+    return this._http.get(this.order_url+id);
+  }
+  getPastOrder(id)
+  {
+    return this._http.get(this.order_details_url+id);
   }
 }

@@ -1,0 +1,22 @@
+
+<div class="container">
+
+    <hr>
+    <div class="form-group">
+      <h3>Email Id :- </h3>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Email_Id" aria-describedby="basic-addon2" [(ngModel)]="email_id">
+        <span class="input-group-addon" id="basic-addon1">@example.com</span>
+      </div>
+      <h3>password :- </h3>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon2" [(ngModel)]="password">
+      </div>
+    </div>
+    <div class="btn-group">
+        <button (click)="onclicklogin()" style="background-color:cornflowerblue;font-size: 30px;">Log In</button>
+
+  </div>
+  <a (click)="onclicknew()"><span class="label label-primary" style="margin-left: 960px;">New User?</span></a>
+  <a (click)="onclickforget()"><span class="label label-primary" style="margin-left: 10px;">Forget Password?</span></a>
+  </div>

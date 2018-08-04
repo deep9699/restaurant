@@ -1,14 +1,20 @@
-<div class="container" >
+<div class="container">
 
   <div class="row" >
     <ul class="nav navbar-nav">
       <li *ngFor="let item of cusine_arr">
-        <button type="button" class="list-group-item" (click)="onClick(item.cusine_name)" style="font-size: 24px;">{{item.cusine_name}}</button>
+        <button type="button" class="list-group-item" (click)="onClick(item.cusine_name)" style="font-size: 20px;">{{item.cusine_name}}</button>
+      </li>
+      <li>
+          <button type="button" class="list-group-item" (click)="onClickpast()" style="font-size: 20px;">PAST ORDER</button>
+        </li>
+      <li>
+        <button type="button" class="list-group-item" (click)="onClickLogout()" style="font-size: 20px;">LOG OUT</button>
       </li>
     </ul>
 
   </div>
-
+<br>
   <div class="row" >
     <div class="col-md-8">
       <div class="row">

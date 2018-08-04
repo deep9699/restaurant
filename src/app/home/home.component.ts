@@ -3,11 +3,11 @@ import { Component, OnInit } from "@angular/core";
 import { cusine } from "./cusine_class";
 import { dish } from "./dish_class";
 import { cusine_dish } from "./cusine_dish_class";
-
+import { Router } from '@angular/router';
 import { CusinesService } from "../cusines.service";
-
+import { bill } from "./bill_class";
 import { bill_details } from "./bill_details_class";
-import { bill__details } from "../home/bill_details_interface";
+
 
 
 @Component({
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
    total:number=0;
   bill_details1:bill_details[]=[];
   x:number;
-  constructor(private _ser: CusinesService,private _datePipe: DatePipe) {}
+  constructor(private _ser: CusinesService,private _router:Router) {}
   onClick(cusine_name) {
     this._ser.getCusinesByName(cusine_name).subscribe((data: cusine_dish[]) => {
       console.log(data);
@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
 
   onClickPayment()
   {
-    this._ser.insertBill(new bill__details(this.total,"deepbhavsar9@gmail.com",this.bill_details1)).subscribe(
+    this._ser.insertBill(new bill(this.total,localStorage.getItem('email_id'))).subscribe(
       (data:any)=>
       {
 
@@ -102,12 +102,22 @@ export class HomeComponent implements OnInit {
           this.total=0;
         }
       );
-     //   this._ser.insertBillDetails(new bill_details(this.bill[this.i],this.qtyarr[this.i],this.pricearr[this.i]))
+
 
       }
     );
 
 
+  }
+
+  onClickLogout()
+  {
+    localStorage.clear();
+    this._router.navigate(['']);
+  }
+  onClickpast()
+  {
+    this._router.navigate(['/pastorder']);
   }
 
   ngOnInit() {
