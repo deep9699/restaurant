@@ -1,12 +1,13 @@
-import {  DatePipe } from '@angular/common';
+
 import { Component, OnInit } from "@angular/core";
-import { cusine } from "./cusine_class";
-import { dish } from "./dish_class";
-import { cusine_dish } from "./cusine_dish_class";
+import { cusine } from "../Class_models/cusine_class";
+import { dish } from "../Class_models/dish_class";
+import { cusine_dish } from "../Class_models/cusine_dish_class";
 import { Router } from '@angular/router';
-import { CusinesService } from "../cusines.service";
-import { bill } from "./bill_class";
-import { bill_details } from "./bill_details_class";
+import { BillService } from "../service_model/bill.service";
+import { CusinesService } from "../service_model/cusines.service";
+import { bill } from "../Class_models/bill_class";
+import { bill_details } from "../Class_models/bill_details_class";
 
 
 
@@ -26,9 +27,9 @@ export class HomeComponent implements OnInit {
    total:number=0;
   bill_details1:bill_details[]=[];
   x:number;
-  constructor(private _ser: CusinesService,private _router:Router) {}
+  constructor(private _ser: BillService,private _ser1:CusinesService,private _router:Router) {}
   onClick(cusine_name) {
-    this._ser.getCusinesByName(cusine_name).subscribe((data: cusine_dish[]) => {
+    this._ser1.getCusinesByName(cusine_name).subscribe((data: cusine_dish[]) => {
       console.log(data);
       this.cusine_dish_arr = data;
     });
@@ -122,11 +123,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this._ser.getCusine().subscribe((data: cusine[]) => {
+    this._ser1.getCusine().subscribe((data: cusine[]) => {
       console.log(data);
       this.cusine_arr = data;
     });
-    this._ser.getCusinesByName("pizza").subscribe((data: cusine_dish[]) => {
+    this._ser1.getCusinesByName("pizza").subscribe((data: cusine_dish[]) => {
       console.log(data);
       this.cusine_dish_arr = data;
     });

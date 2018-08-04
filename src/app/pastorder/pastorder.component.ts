@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CusinesService } from "../cusines.service";
-import { pastorder } from "../pastorder/pastorder_class";
+import { OrderService } from "../service_model/order.service";
+import { pastorder } from "../Class_models/pastorder_class";
 import { Router } from "@angular/router";
+
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Router } from "@angular/router";
 export class PastorderComponent implements OnInit {
 
   pastarr:pastorder[]=[];
-  constructor(private _ser:CusinesService,public _router:Router) { }
+  constructor(private _ser:OrderService,public _router:Router) { }
 
   onclickBack()
   {
