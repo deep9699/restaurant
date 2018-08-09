@@ -1,4 +1,4 @@
-import { bill_details } from "../home/bill_details_class";
+import { bill_details } from "../Class_models/bill_details_class";
 export class bill__details
 {
   constructor(

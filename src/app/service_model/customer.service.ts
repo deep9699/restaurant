@@ -9,6 +9,7 @@ import { customer } from '../Class_models/customer_class';
 export class CustomerService {
 
   private loginurl:string="http://localhost:3000/customer/";
+  private signupurl:string="http://localhost:3000/customer1/";
 
   constructor(private _http:HttpClient) { }
 
@@ -19,5 +20,11 @@ export class CustomerService {
     return this._http.post(this.loginurl,body,{headers:head1});
   }
 
+  insertCustomer(item:customer)
+  {
+    let body=JSON.stringify(item);
+    let head1=new HttpHeaders().set('Content-Type','application/json');
+    return this._http.post(this.signupurl,body,{headers:head1});
+  }
 
 }
