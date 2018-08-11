@@ -5,6 +5,11 @@ import {SelectionModel} from '@angular/cdk/collections';
 import { customer } from "../Class_models/customer_class";
 
 
+export interface cities {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -17,7 +22,7 @@ export class SignUpComponent implements OnInit {
   user_name:string;
   mobile_no:string;
   age:number=0;
-  city:string;
+  city:string="Ahemedabad";
   gen:string='male';
   address:string;
   selection = new SelectionModel(true, []);
@@ -25,24 +30,28 @@ export class SignUpComponent implements OnInit {
 
   constructor(private _router:Router,private _ser:CustomerService) { }
 
+  addForm(item){
+    console.log(item);
+  }
 
+
+  onchange()
+  {
+    console.log(this.city);
+  }
   onsign()
   {
-    if(this.email_id!='' && this.password!='' && this.user_name!='' && this.age!=0 &&this.mobile_no!='' && this.city!='' && this.gen!='' && this.address)
-    {
     this._ser.insertCustomer(new customer(this.email_id,this.password,this.user_name,this.age,this.mobile_no,this.city,this.gen,this.address)).subscribe(
       (data:any)=>
       {
         console.log(data);
-        if(data.affectedRow==1)
-        {
           alert('sign up successfully');
           this._router.navigate(['']);
-        }
+
 
       }
     );
-  }
+
 }
 onback()
 {

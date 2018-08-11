@@ -10,7 +10,9 @@ import { MatCardModule,
   MatCheckboxModule,
   MatTableModule,
   MatInputModule,
-  MatRadioModule
+  MatRadioModule,
+  MatSelectModule,
+  MatOptionModule
    } from '@angular/material';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +27,8 @@ import { PastorderComponent } from './pastorder/pastorder.component';
 import { PastOrderDetailsComponent } from './past-order-details/past-order-details.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignFormDemoComponent } from './sign-form-demo/sign-form-demo.component';
+import { CreditcardDirective } from './creditcard.directive';
+import { Creditcard1Component } from './creditcard1/creditcard1.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import { SignFormDemoComponent } from './sign-form-demo/sign-form-demo.component
     PastorderComponent,
     PastOrderDetailsComponent,
     SignUpComponent,
-    SignFormDemoComponent
+    SignFormDemoComponent,
+    CreditcardDirective,
+    Creditcard1Component
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,9 @@ import { SignFormDemoComponent } from './sign-form-demo/sign-form-demo.component
     MatCardModule,
     routing,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule,
+    MatOptionModule
 
   ],
   providers: [DatePipe],
