@@ -5,9 +5,9 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OrderService {
-
-  private order_url="http://localhost:3000/order/";
-  private order_details_url="http://localhost:3000/order_details/";
+  private ip=localStorage.getItem('ipaddress');
+  private order_url="http://"+this.ip+":3000/order/";
+  private order_details_url="http://"+this.ip+":3000/order_details/";
   constructor(private _http:HttpClient) { }
 
   getOrder(id)

@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Update Dish Form</h1>
+  <hr>
+  <div class="form-group">
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input disabled matInput placeholder="Dish_name"  name="dish_name" [(ngModel)]="dish_name">
+      </mat-form-field>
+    </form>
+   </div>
+
+
+
+  <div class="form-group">
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Dish_price" name="dish_price" [(ngModel)]="dish_price">
+      </mat-form-field>
+    </form>
+  </div>
+
+<div class="form-group">
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput disabled placeholder="Cusine_id" name="cusine_id" [(ngModel)]="cusine_id">
+      </mat-form-field>
+    </form>
+</div>
+
+
+
+
+<div class="form-group">
+    <button (click)="onupdate()" style="width: 20%;height: 50px;margin-left: 20px;border-radius: 2px;background-color: cornflowerblue;font-size: 20px;">Update Dish</button>
+    <button (click)="onback()" style="width: 20%;height: 50px;margin-left: 20px;border-radius: 2px;background-color: cornflowerblue;font-size: 20px;">Back</button>
+  </div>

@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row" >
+        <ul class="nav navbar-nav">
+          <li>
+            <button type="button" (click)="onclickdish()" class="list-group-item"  style="font-size: 20px;">Manage Dish</button>
+          </li>
+          <li>
+              <button type="button" (click)="onclickcusine()" class="list-group-item"  style="font-size: 20px;">Manage Cusine</button>
+            </li>
+          <li>
+            <button type="button"  (click)="onclickbill()"  class="list-group-item"  style="font-size: 20px;">Manage bill</button>
+          </li>
+          <li>
+              <button type="button" (click)="onClickLogout()" class="list-group-item"  style="font-size: 20px;">Log Out</button>
+            </li>
+        </ul>
+
+      </div>
+
+    <h1>Dish Table</h1>
+    <hr>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort width='100%'>
+
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef >
+
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox (change)="checkChange(element)"> </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Dish_Id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dish_Id. </th>
+        <td mat-cell *matCellDef="let element"> {{element.dish_id}} </td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="Dish_Name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dish_Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.dish_name}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Dish_price">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Dish_price </th>
+          <td mat-cell *matCellDef="let element"> {{element.dish_price}} </td>
+        </ng-container>
+
+
+      <ng-container matColumnDef="Dish_img">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Dish_img </th>
+          <td mat-cell *matCellDef="let element"><img src="http://{{ip}}:3000/images/dish/{{element.dish_img}}" style="height: 30px;width:30px;border-radius: 20px;" alt="..."></td>
+        </ng-container>
+
+
+      <ng-container matColumnDef="Cusine_Id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Cusine_Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.fk_cusine_id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Update">
+          <th mat-header-cell *matHeaderCellDef >
+
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="primary" (click)="onclickupdate(element.dish_id)">Update</button>
+          </td>
+        </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumns;">
+      </tr>
+    </table>
+    <br>
+    <br>
+    <mat-paginator [pageSizeOptions]="[1, 2, 5]">
+    </mat-paginator>
+    <div class="button-row">
+      <button mat-raised-button color="warn" (click)="onclickdeleteAll()">Delete</button>
+      &nbsp;&nbsp;
+      <button mat-raised-button color="primary" (click)="onclickadd()">Add Dish</button>
+
+
+    </div>
+
+    <div>
+
+      </div>
+    </div>

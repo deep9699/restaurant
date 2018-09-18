@@ -9,12 +9,14 @@ export class BillService {
 
   constructor(private _http:HttpClient) { }
 
-  private bill_url="http://localhost:3000/bill/";
-  private bill_details_url="http://localhost:3000/bill_details/";
+   ip=localStorage.getItem('ipaddress');
+  private bill_url="http://"+this.ip+":3000/bill/";//"http://localhost:3000/bill/";
+  private bill_details_url="http://"+this.ip+":3000/bill_details/";//"http://localhost:3000/bill_details/";
 
 
   getBill()
   {
+    console.log(this.bill_url);
     return this._http.get(this.bill_url);
   }
   insertBill(item)
@@ -25,6 +27,7 @@ export class BillService {
 
      return this._http.post(this.bill_url,body,{headers:head1});
   }
+
   insertBillDetails(item)
   {
     let body=JSON.stringify(item);

@@ -3,15 +3,48 @@
 
     <hr>
     <div class="form-group">
-      <h3>Email Id :- </h3>
+      <!-- <h3>Email Id :- </h3>
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Email_Id" aria-describedby="basic-addon2" [(ngModel)]="email_id">
         <span class="input-group-addon" id="basic-addon1">@example.com</span>
       </div>
-      <h3>password :- </h3>
+       -->
+       <mat-form-field class="example-full-width" hintLabel="Must be valid Email Id">
+        <input matInput
+        name="email_id"
+        ngModel
+        #email_id="ngModel"
+        required
+        email
+         placeholder="Email Id" >
+        <mat-error *ngIf="email_id?.hasError('required')">
+          email id is required
+        </mat-error>
+
+        <mat-error *ngIf="!email_id?.hasError('required')">
+          email id is not valid
+        </mat-error>
+      </mat-form-field>
+
+      <!-- <h3>password :- </h3>
       <div class="form-group">
         <input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon2" [(ngModel)]="password">
-      </div>
+      </div> -->
+
+      <mat-form-field class="example-full-width" hintLabel="Must conatin 8 characters">
+        <input matInput
+        name="password"
+        ngModel
+        #password="ngModel"
+        required
+        placeholder="Password" >
+        <mat-icon matSuffix (click)="flag = !flag">{{flag ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-hint align="end">{{password.value.length}}/8</mat-hint>
+        <mat-error *ngIf="password?.hasError('required')">
+          password is required
+        </mat-error>
+      </mat-form-field>
+
     </div>
     <div class="btn-group">
         <button (click)="onclicklogin()" style="background-color:cornflowerblue;font-size: 30px;">Log In</button>
@@ -19,4 +52,5 @@
   </div>
   <a (click)="onclicknew()"><span class="label label-primary" style="margin-left: 960px;">New User?</span></a>
   <a (click)="onclickforget()"><span class="label label-primary" style="margin-left: 10px;">Forget Password?</span></a>
+  <a (click)="onclickAdmin()"><span class="label label-primary" style="margin-left: 10px;">Admin?</span></a>
   </div>

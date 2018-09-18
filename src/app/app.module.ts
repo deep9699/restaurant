@@ -12,8 +12,12 @@ import { MatCardModule,
   MatInputModule,
   MatRadioModule,
   MatSelectModule,
-  MatOptionModule
+  MatOptionModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatMenuModule
    } from '@angular/material';
+   import { MatFormFieldModule } from "@angular/material/form-field";
 
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from "@angular/common";
@@ -29,6 +33,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignFormDemoComponent } from './sign-form-demo/sign-form-demo.component';
 import { CreditcardDirective } from './creditcard.directive';
 import { Creditcard1Component } from './creditcard1/creditcard1.component';
+import { AddDishComponent } from './add-dish/add-dish.component';
+import { AdminComponent } from './admin/admin.component';
+import { ManageDishComponent } from './manage-dish/manage-dish.component';
+import { UpdateDishComponent } from './update-dish/update-dish.component';
+import { ManageCusineComponent } from './manage-cusine/manage-cusine.component';
+import { AddCusineComponent } from './add-cusine/add-cusine.component';
+import { UpdateCusineComponent } from './update-cusine/update-cusine.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +51,14 @@ import { Creditcard1Component } from './creditcard1/creditcard1.component';
     SignUpComponent,
     SignFormDemoComponent,
     CreditcardDirective,
-    Creditcard1Component
+    Creditcard1Component,
+    AddDishComponent,
+    AdminComponent,
+    ManageDishComponent,
+    UpdateDishComponent,
+    ManageCusineComponent,
+    AddCusineComponent,
+    UpdateCusineComponent
   ],
   imports: [
     BrowserModule,
@@ -54,11 +72,15 @@ import { Creditcard1Component } from './creditcard1/creditcard1.component';
     MatProgressSpinnerModule,
     MatSortModule,
     MatCardModule,
+    MatIconModule,
+    MatFormFieldModule,
     routing,
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatSidenavModule,
+    MatMenuModule
 
   ],
   providers: [DatePipe],

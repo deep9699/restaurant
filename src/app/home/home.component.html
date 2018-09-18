@@ -14,6 +14,21 @@
     </ul>
 
   </div>
+  <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+    <ul >
+        <li *ngFor="let item of cusine_arr">
+          <button type="button" class="list-group-item" (click)="onClick(item.cusine_name)" >{{item.cusine_name}}</button>
+        </li>
+        <li>
+            <button type="button" class="list-group-item" (click)="onClickpast()" >PAST ORDER</button>
+          </li>
+        <li>
+          <button type="button" class="list-group-item" (click)="onClickLogout()" >LOG OUT</button>
+        </li>
+      </ul>
+
+</mat-menu> -->
 <br>
   <div class="row" >
     <div class="col-md-8">
@@ -21,7 +36,7 @@
         <div *ngFor="let item of cusine_dish_arr,let i=index" class="col-sm-6 col-md-4">
           <button type="button" class="list-group-item" (click)="ondish(item,i)">
             <div class="thumbnail">
-              <img src="http://localhost:3000/images/dish/{{item.dish_img}}" alt="...">
+              <img src="http://{{ip}}:3000/images/dish/{{item.dish_img}}" alt="...">
               <div class="caption">
 
                 <h4>{{item.dish_name}}</h4>
@@ -47,7 +62,7 @@
         <th>Price</th>
         <th>Remark</th>
         <tr *ngFor="let item of bill;let i=index">
-          <td><img src="http://localhost:3000/images/dish/{{item.dish_img}}" alt="..." style="height: 30px;width:30px;border-radius: 20px;"></td>
+          <td><img src="http://{{ip}}:3000/images/dish/{{item.dish_img}}" alt="..." style="height: 30px;width:30px;border-radius: 20px;"></td>
           <td>{{item.dish_name}}</td>
           <td><input type="number" style="width: 50px;" (change)="onChange(item,i)" [(ngModel)]="qtyarr[i]"></td>
           <td>{{pricearr[i]}}</td>
