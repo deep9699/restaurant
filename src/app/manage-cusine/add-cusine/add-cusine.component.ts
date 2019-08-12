@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { CusinesService } from "../service_model/cusines.service";
-import { cusine } from '../Class_models/cusine_class';
+import { cusine } from 'src/app/Class_models/cusine_class';
+import { CusinesService } from 'src/app/service_model/cusines.service';
 
 @Component({
   selector: 'app-add-cusine',

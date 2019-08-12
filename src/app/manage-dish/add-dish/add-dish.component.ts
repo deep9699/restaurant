@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DishService } from "../service_model/dish.service";
+import { DishService } from "../../service_model/dish.service";
 import { Router } from '@angular/router';
-import { cusine } from '../Class_models/cusine_class';
-import { CusinesService } from '../service_model/cusines.service';
+import { cusine } from '../../Class_models/cusine_class';
+import { CusinesService } from '../../service_model/cusines.service';
 
 @Component({
   selector: 'app-add-dish',

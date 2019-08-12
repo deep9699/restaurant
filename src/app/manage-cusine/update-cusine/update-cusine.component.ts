@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CusinesService } from "../service_model/cusines.service";
+import { CusinesService } from "../../service_model/cusines.service";
 import { Router,ActivatedRoute } from "@angular/router";
-import { cusine } from '../Class_models/cusine_class';
+import { cusine } from 'src/app/Class_models/cusine_class';
+
 
 @Component({
   selector: 'app-update-cusine',

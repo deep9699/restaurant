@@ -8,7 +8,7 @@ import { customer } from '../Class_models/customer_class';
 })
 export class CustomerService {
 
-   ip=localStorage.getItem('ipaddress');
+   ip='localhost';
   private loginurl:string="http://"+this.ip+":3000/customer/";
   private signupurl:string="http://"+this.ip+":3000/customer1/";
 

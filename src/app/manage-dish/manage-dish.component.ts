@@ -37,7 +37,7 @@ onclickcusine()
 }
 onclickupdate(id:number)
 {
-  this._router.navigate(['update_dish',id]);
+  this._router.navigate(['/dish/update_dish',id]);
 }
 onclickbill()
 {
@@ -50,7 +50,7 @@ onclickdish()
 
 onclickadd()
 {
-  this._router.navigate(['adddish']);
+  this._router.navigate(['/dish/adddish']);
 }
 onclickdeleteAll()
 {

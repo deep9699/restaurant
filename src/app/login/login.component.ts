@@ -13,21 +13,24 @@ export class LoginComponent implements OnInit {
 
 
   flag:boolean=true;
-  email_id:string;
-  password:string;
-  constructor(private _ser:CustomerService,private _router:Router,private _http:HttpClient)
+  email_id1:string;
+  password1:string="";
+  constructor(private _ser:CustomerService,private _router:Router)
    {
   }
 
 
   onclicklogin()
   {
-    this._ser.getCustomerByLogin(new customer(this.email_id,this.password)).subscribe(
+    console.log(this.email_id1,this.password1);
+
+    this._ser.getCustomerByLogin(new customer(this.email_id1,this.password1)).subscribe(
       (data:customer[])=>
       {
+          console.log(data);
           if(data.length==1)
           {
-            localStorage.setItem('email_id',this.email_id);
+            localStorage.setItem('email_id',this.email_id1);
             this._router.navigate(['home']);
           }
           else

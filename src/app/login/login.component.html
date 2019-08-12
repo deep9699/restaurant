@@ -16,7 +16,9 @@
         #email_id="ngModel"
         required
         email
-         placeholder="Email Id" >
+        placeholder="Email Id"
+        [(ngModel)]="email_id1"
+        >
         <mat-error *ngIf="email_id?.hasError('required')">
           email id is required
         </mat-error>
@@ -32,25 +34,33 @@
       </div> -->
 
       <mat-form-field class="example-full-width" hintLabel="Must conatin 8 characters">
-        <input matInput
+         <input matInput
         name="password"
         ngModel
         #password="ngModel"
         required
-        placeholder="Password" >
-        <mat-icon matSuffix (click)="flag = !flag">{{flag ? 'visibility' : 'visibility_off'}}</mat-icon>
-        <mat-hint align="end">{{password.value.length}}/8</mat-hint>
-        <mat-error *ngIf="password?.hasError('required')">
+        [type]="flag ? 'password' : 'text'"
+        placeholder="Password"
+        [(ngModel)]="password1"
+        >
+       <mat-icon matSuffix (click)="flag = !flag">{{flag ? 'visibility' : 'visibility_off'}}</mat-icon>
+       <mat-hint align="end">{{password.value.length}}/8</mat-hint>
+        <mat-error *ngIf="password.hasError('required')">
           password is required
         </mat-error>
       </mat-form-field>
 
     </div>
     <div class="btn-group">
-        <button (click)="onclicklogin()" style="background-color:cornflowerblue;font-size: 30px;">Log In</button>
-
+        <!-- <button (click)="onclicklogin()" style="background-color:cornflowerblue;font-size: 30px;">Log In</button> -->
+        <button mat-raised-button (click)="onclicklogin()" color="primary">Log In</button>
   </div>
-  <a (click)="onclicknew()"><span class="label label-primary" style="margin-left: 960px;">New User?</span></a>
-  <a (click)="onclickforget()"><span class="label label-primary" style="margin-left: 10px;">Forget Password?</span></a>
-  <a (click)="onclickAdmin()"><span class="label label-primary" style="margin-left: 10px;">Admin?</span></a>
+
+
+
+  <div class="atag">
+  <a mat-raised-button (click)="onclicknew()" routerLink=".">New User?</a>
+  <a mat-raised-button (click)="onclickforget()" routerLink=".">Forget Password?</a>
+  <a mat-raised-button (click)="onclickAdmin()" routerLink=".">Admin?</a>
+</div>
   </div>

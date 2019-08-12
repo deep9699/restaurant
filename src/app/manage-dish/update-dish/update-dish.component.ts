@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DishService } from "../service_model/dish.service";
+
 import { Router,ActivatedRoute, Params } from "@angular/router";
-import { dish } from '../Class_models/dish_class';
+import { dish } from '../../Class_models/dish_class';
+import { DishService } from 'src/app/service_model/dish.service';
 
 
 @Component({

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { dish } from "../Class_models/dish_class";
+import { FormGroup } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,10 @@ export class DishService {
   private dish_url1="http://"+this.ip+":3000/dish1/";//'http://localhost:3000/dish1/';
 
   addDish(fd:FormData)
+  {
+    return this._http.post(this.dish_url,fd);
+  }
+  extra(fd:FormData)
   {
     return this._http.post(this.dish_url,fd);
   }

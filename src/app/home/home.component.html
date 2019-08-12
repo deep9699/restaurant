@@ -66,7 +66,7 @@
           <td>{{item.dish_name}}</td>
           <td><input type="number" style="width: 50px;" (change)="onChange(item,i)" [(ngModel)]="qtyarr[i]"></td>
           <td>{{pricearr[i]}}</td>
-          <td><input type="text" [(ngModel)]="remarkarr[i]" value=" "></td>
+          <td><input type="text" [(ngModel)]="remarkarr[i]"></td>
           <td>
             <button type="button" class="btn btn-default" aria-label="Left Align" (click)="onDelete(i)">
               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
